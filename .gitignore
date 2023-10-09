@@ -23,5 +23,5 @@
 hs_err_pid*
 replay_pid*
 
-# Ignorar pasta .idea e seus conteúdos
+# Ignore .idea folder and its contents
 .idea/
