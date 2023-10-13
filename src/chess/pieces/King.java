@@ -8,7 +8,7 @@ import chess.Color;
 
 public class King extends ChessPiece {
 
-    private ChessMatch chessMatch;
+    private final ChessMatch chessMatch;
 
     public King(Board board, Color color, ChessMatch chessMatch) {
         super(board, color);
@@ -86,7 +86,7 @@ public class King extends ChessPiece {
 
         // #specialmove castling
         if (getMoveCount() == 0 && !chessMatch.isCheck()) {
-            // #specialmove castling Kingside rook
+            // #specialmove castling King side rook
             Position positionT1 = new Position(position.getRow(), position.getColumn() + 3);
             if (testRookCastling(positionT1)) {
                 Position position1 = new Position(position.getRow(), position.getColumn() + 1);
@@ -95,7 +95,7 @@ public class King extends ChessPiece {
                     mat[position.getRow()][position.getColumn() + 2] = true;
                 }
             }
-            // #specialmove castling queenside rook
+            // #specialmove castling queen side rook
             Position positionT2 = new Position(position.getRow(), position.getColumn() - 4);
             if (testRookCastling(positionT2)) {
                 Position position1 = new Position(position.getRow(), position.getColumn() - 1);
